@@ -1,0 +1,701 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Sublime text </title>
+		<link rel="shortcut icon" href="favicon.ico">        
+		<style>
+        	body{
+        		margin-top: 0px;
+        		background-color: #CFE8D4;
+        		font-family:"Microsoft yahei";
+        	}
+            @font-face
+            {
+            font-family: 'Ubuntu';
+            src: url('Ubuntu-R.ttf');
+            }         	
+            #page{
+        		margin-left: auto;
+        		margin-right: auto;
+        		margin-top: 30px;
+        		width: 750px;
+        		height: auto;
+        		overflow: hidden;
+        		padding: 25px 50px 25px 50px;
+        		background-color: #fff;
+        	}
+        	aside{
+        		width: 180px;
+        		height: auto;
+        		margin-top: 10px;
+        		float: left;
+        	}
+        	#touxiang{
+        		width: 100px;
+        		height: 100px;
+        		background-color: #CFE8D4;
+        		border:1px solid #444;
+        	}
+        	#infomation{
+        		width: 180px;
+        		height: 500px;
+        		margin-top: 20px;
+        	}
+        	#date{
+        		width: 180px;
+        		height: 50px;
+        		line-height: 50px;
+        		font-size: 1.2em;
+        		font-family: 'Ubuntu', "Microsoft yahei";
+        	}
+        	#wea1{
+        		margin-top: 10px;
+        	}
+        	#wea1,
+        	#wea2,
+        	#wind1,
+        	#wind2,
+        	#qlty,
+        	#updt{
+        		width: 180px;
+        		height: 25px;
+        		line-height: 25px;
+        		font-family: 'Ubuntu',"Microsoft yahei";
+        		font-size: 0.8em;
+        	}
+        	textarea{
+        		width: 168px;
+        		height: 300px;
+        		margin-top: 30px;
+        		border: 1px solid #f2f2f2;
+        		font-family: 'Ubuntu',"Microsoft yahei";
+        		font-size: 0.9em;
+        		color: #666;
+        	}
+
+        	article{
+        		width: 545px;
+        		height: auto;
+        		margin-top: 10px;
+        		margin-left: 20px;
+        		float: left;
+        	}
+        	#stabs{
+        		width: 547px;
+        		height: 30px;
+        		background-color: #DD4814;
+        	}
+        	ul{
+        		margin: 0px;
+        		padding: 0px;
+        	}
+        	#stabs ul li{
+        		width: 30px;
+        		padding-left: 20px;
+        		height: 30px;
+        		line-height: 30px;
+        		float: left;
+        		list-style: none;
+        		font-size: 0.9em;
+        	}
+        	#stabs a,
+        	#stabs a:link,
+        	#stabs a:visited,
+        	#stabs a:active{
+        		text-decoration: none;
+        		color: #fff;
+        	}
+        	.spannels{
+        		display: none;
+        	}
+        	#search1,
+        	.spannels{
+        		width: 545px;
+        		height: 100px;
+        		border:1px solid #e2e2e2;
+				border-top:0px;
+        	}
+            ::-webkit-input-placeholder{
+                font-family: 'Ubuntu',"Microsoft yahei";
+				font-style:italic;
+            }
+            ::-moz-placeholder{
+                font-family: 'Ubuntu',"Microsoft yahei";
+				font-style:italic;
+            }
+
+        	.keyword{
+        		width: 340px;
+        		height: 30px;
+        		padding-left: 10px;
+        		margin-top: 30px;
+        		margin-left: 50px;
+        		border-top: 1px solid #ccc;
+        		border-right: 1px solid #DD4814;
+        		border-bottom: 1px solid #ccc;
+        		border-left: 1px solid #ccc;
+				font-family:"Microsoft Yahei";
+        		float: left;
+        	}
+        	.keyword:hover,
+        	.keyword:active{
+        		border-color: #DD4814;
+        	}
+            .keyword:focus{
+                outline: 0;
+            }
+        	.button{
+        		width: 70px;
+        		height: 34px;
+        		margin-top: 30px;
+        		background-color: #DD4814;
+        		border: 1px solid #DD4814;
+				font-family:"Microsoft Yahei";
+        		color: #fff;
+                outline: none;
+        	}
+        	.link{
+        		width: 540px;
+        		padding-left: 5px;
+        		height: auto;
+        		margin-top: 10px;
+        		border: 1px solid #e2e2e2;
+        		overflow: hidden;
+        	}
+        	.link ul li{
+        		float: left;
+        		list-style: none;
+        		width: 90px;
+        		height: 38px;
+        		line-height: 35px;
+        		text-align: center;
+        		font-size: 0.9em;
+        	}
+        	.link a,
+        	.link a:link,
+        	.link a:visited,
+        	.link a:active{
+        		text-decoration: none;
+        		color: #333;
+        	}
+        	.link a:hover{
+        		color: #DD4814;
+        	}
+        	#footer{
+        		width: 850px;
+        		height: 100px;
+        		padding-top: 10px;
+        		margin-left: auto;
+        		margin-right: auto;
+        		border-top: 3px solid #DD4814;
+        		font-family: 'Ubuntu', sans-serif;
+        		font-size: 0.8em;
+        		background-color: #fff;
+        		color: #676767;
+        		text-align: right;
+        	}
+        	#footer p{
+        		margin: 0px 20px 5px 10px;
+        	}
+
+        </style>
+    </head>
+    <body>
+        <div id="page">
+        	<aside>
+        		<div id="touxiang">
+                    <img src="PL.png">
+        		</div>
+        		<div id="infomation">
+        			<div id="date">
+        				<p></p>
+        			</div>
+        			<div id="weather">
+        				<div id="wea1">
+        				</div>
+        				<div id="wind1">					
+        				</div>
+        				<div id="wea2">        					
+        				</div>
+        				<div id="wind2">        					
+        				</div>
+        				<div id="qlty">        					
+        				</div>
+        				<div id="updt">        					
+        				</div>
+        			</div>
+        			<div id="input">
+        				<textarea></textarea>
+        			</div>
+        		</div>
+        	</aside>
+        	<article>
+        		<div id="search">
+        			<div id="stabs">
+        				<ul>
+        				    <li><a href="#" onclick="changeTab('search1')">百度</a></li>
+        				    <li><a href="#" onclick="changeTab('search2')">谷歌</a></li>
+        				    <li><a href="#" onclick="changeTab('search3')">必应</a></li>
+        				    <li><a href="#" onclick="changeTab('search4')">搜狗</a></li>
+        				    <li><a href="#" onclick="changeTab('search5')">有道</a></li>
+        				</ul>
+        			</div>
+        			<div id="search1">
+						<form action="http://www.baidu.com/baidu" target="_blank" method="get">
+							<input name="tn" type="hidden" value="baidu">
+							<input class="keyword" type="text" baiduSug="1" name="word"  placeholder="baidu Search...">
+							<input class="button" type="submit"  value="百度">
+						</form>
+        			</div>
+        			<div id="search2" class="spannels">
+						<form action="https://www.google.com.hk/search" target="_blank" method="get">
+							<input class="keyword" type="text"  name="q"  placeholder="feel lucky...">
+							<input class="button" type="submit"  value="Google">
+						</form>
+        			</div>
+        			<!--有道词典
+        			<div id="search2" class="spannels">
+						<form action="http://dict.youdao.com/search" target="_blank" method="get">
+							<input class="keyword" type="text"  name="q">
+							<input class="button" type="submit"  value="有道">
+						</form>
+        			</div>
+        			-->
+        			<div id="search3" class="spannels">
+						<form action="http://cn.bing.com/search" target="_blank" method="get" >
+							<input class="keyword" name="q" type="text"  placeholder="Bing ..."/>
+							<input class="button" type="submit" value="必应"/>
+						</form>
+        			</div>
+        			<div id="search4" class="spannels">
+						<form action="https://www.sogou.com/web" target="_blank" method="get">
+							<input class="keyword" name="query" type="text"  placeholder="Sougou ..."></input>
+							<input class="button" type="submit" value="搜狗"></input>
+						</form>
+        			</div>
+        			<div id="search5" class="spannels">
+						<form action="http://dict.youdao.com/search" target="_blank" method="get">
+							<input class="keyword" name="q" type="text"  placeholder="Youdao Dict ..."></input>
+							<input class="button" type="submit" value="有道"></input>
+						</form>
+        			</div>
+        		</div>
+        		<div class="link">
+        			<ul>
+        			    <li>
+        			    	<a href="https://www.baidu.com">百度搜索</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://www.google.com.hk/">Google</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://www.sogou.com/">搜狗搜索</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://cn.bing.com/">必应搜索</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://www.so.com/">360搜索</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.cnki.net/">Cnki</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://map.baidu.com/">百度地图</a>
+        			    </li>
+        			    <li>
+                            <a href="http://map.sogou.com">搜狗地图</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://fanyi.baidu.com/">百度翻译</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://wenku.baidu.com/">百度文库</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://xueshu.baidu.com">百度学术</a>
+        			    </li>
+        			    
+        			</ul>
+        		</div>
+        		<div class="link">
+        			<ul>
+        				<li>
+        					<a href="http://www.sina.com.cn">新浪网</a>
+        				</li>
+        				<li>
+        					<a href="http://www.ifeng.com/">凤凰网</a>
+        				</li>
+        				<li>
+        					<a href="http://www.qq.com/">腾讯网</a>
+        				</li>
+        				<li>
+        					<a href="http://www.youku.com/">优酷网</a>
+        				</li>
+        				<li>
+        					<a href="https://www.douyu.com/">斗鱼</a>
+        				</li>
+        				<li>
+        					<a href="http://www.bilibili.com/">bilibili</a>
+        				</li>
+        				<li>
+        					<a href="https://www.taobao.com/">淘宝网</a>
+        				</li>
+        				<li>
+        					<a href="https://www.tmall.com/">天猫商城</a>
+        				</li>
+        				<li>
+        					<a href="https://www.1688.com/">阿里巴巴</a>
+        				</li>
+        				<li>
+        					<a href="https://www.jd.com/">京东商城</a>
+        				</li>
+        			    <li>
+        			    	<a href="https://www.amazon.cn/">亚马逊</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.dangdang.com/">当当网</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.meituan.com/">美团网</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://www.12306.cn/">12306</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.elong.com">艺龙</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://bj.58.com/">58同城</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.weather.com.cn/weather/101010200.shtml">天气查询</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://tool.114la.com/live/calendar/">万年历</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://mail.126.com/">126邮箱</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://mail.qq.com">QQ邮箱</a>
+        			    </li>
+        			</ul>
+        		</div>
+        		<div class="link">
+        			<ul>
+        			    <li>
+        			    	<a href="https://wx.qq.com/">微  信</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://tieba.baidu.com/">百度贴吧</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://qzone.qq.com/">QQ空间</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://weibo.com/">新浪微博</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.zhihu.com/">知  乎</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.huihui.cn/">惠惠网</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.smzdm.com/old/">什么值得买</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://city.ibeike.com/forum-32-1.html">校内交易</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://bt.neu6.edu.cn/forum.php">6维空间</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://bt.byr.cn/">北邮人</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://pt.ibeike.com/browse.php">校内资源</a>
+        			    </li>
+        			    <li>
+        			    	<a href="ftp://ftp.ustb.edu.cn/">ftp下载</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.zdfans.com/">zd423</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.iplaysoft.com/">异次元软件</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://xbeta.info/">善用佳软</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.shaoit.com/">殁飘遥</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://liulanmi.com/">浏览迷</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://ilxdh.com/">龙轩导航</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://www.youtube.com/?gl=HK">uTube</a>
+        			    </li>
+        			    <li>
+                    <a href="http://tv.cctv.com/live/">CNTV</a>
+        			    </li>
+        			</ul>
+        		</div>
+        		<div class="link">
+        			<ul>
+        			    <li>
+        			    	<a href="http://202.204.48.66/">上网登录</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.ustb.edu.cn/">北科首页</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://lib.ustb.edu.cn/">图书馆</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://sciencedirect.com/">爱思唯尔</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://cn.bing.com/academic">Bing学术</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://scholar.google.com.hk/">Google学术</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.gb688.cn/bzgk/gb/index">标准下载</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.zhaopin.com/">智联招聘</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.yingjiesheng.com/">应届生</a>
+        			    </li>
+        			    <li>
+                    <a href="https://n.ustb.edu.cn/dana-na/auth/url_default/welcome.cgi">北科VPN</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://n.ustb.edu.cn/,DanaInfo=www.cnki.net+">知网VPN</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://n.ustb.edu.cn/,DanaInfo=city.ibeike.com/forum-32-1.html">贝壳VPN</a>
+        			    </li>
+        			    <li>
+        			    	<a href=""></a>
+        			    </li>
+
+        			</ul>
+        		</div>
+        		<div class="link">
+        			<ul>
+        			    <li>
+        			    	<a href="https://greasyfork.org/zh-CN">GreaseFork</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://userstyles.org">Stylish</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.w3school.com.cn">w3school</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000">廖雪峰</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://pan.baidu.com">百度云</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.hostinger.com.hk/">主机屋</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.heweather.com/">和风天气</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.materialui.co/">material ui</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://serve.netsh.org/pub/ipv6-hosts/">奶昔</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://cv.qiaobutang.com/">乔布简历</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://office.mmais.com.cn/Template/Home.shtml">优品模板</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.e2go.com.cn/">客运信息</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://chrome.google.com/webstore/category/extensions?hl=zh-CN">谷歌插件</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.china-eia.com/">环评网</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.eiabbs.cn">环评论坛</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://www.eiafans.com">环评爱好者</a>
+        			    </li>
+        			    <li>
+        			    	<a href="https://www.uu.me/mail/main.html">傲游U+</a>
+        			    </li>
+        			    <li>
+        			    	<a href=""></a>
+        			    </li>
+        			    <li>
+        			    	<a href=""></a>
+        			    </li>
+        			</ul>
+        		</div>
+        		<div class="link">
+        			<ul>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=cctv4">cctv-4</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://iptv.ustb.edu.cn/tv2/zhongyangdianshitai/2015-01-23/24.html">cctv5u</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=cctv5hd">cctv-5</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=cctv5">cctv-5普通</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=cctv6hd">cctv-6</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=dfhd">东方卫视</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=lzu-dfws">东方普清</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://iptv.ustb.edu.cn/tv2/difangweishi/2015-01-23/31.html">东方卫视u</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=cctv9">cctv-9</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=cctv10">cctv-10</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=cctv11">cctv-11</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=cctv13">cctv-13</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=chchd"><i>CHC</i></a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=zjhd">浙江卫视</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=jshd">江苏卫视</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/newplayer?p=hunanhd">湖南卫视</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://hdtv.neu6.edu.cn/">东北大学</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://iptv.ustb.edu.cn/">北科直播</a>
+        			    </li>
+        			    <li>
+        			    	<a href="http://tv.byr.cn/desktop/">北邮人</a>
+        			    </li>
+        			    <li>
+        			    	<a href=""></a>
+        			    </li>
+        			</ul>
+        		</div>
+        	</article>
+        </div>
+    	<div id="footer">
+    		<p>edited by sublime text</p>
+    		<p>at Apr.8th 2017 Sataday</p>
+    	</div>
+        <script>
+        	function changeTab(id){
+        		var ids=["search1","search2","search3","search4","search5"];
+        		for (var i = 0; i < ids.length; i++) {
+        			if (ids[i]==id) {
+        				document.getElementById(id).style.display = "block";
+        			}else{
+        				document.getElementById(ids[i]).style.display = "none";
+        			}
+        		}
+        	}
+        	//新标签页打开链接
+        	var as=document.querySelectorAll('.link a');
+        	for (var i = 0; i < as.length; i++) {
+        		as[i].target='_blank';
+        	}
+        	//显示时间
+        	var now = new Date();
+        	var weeks = ['Sunday.','Monday.','Tuesday.','Wednesday.','Thursday.','Friday.','Saturday.'];
+        	var months= ['Jan.','Feb.','Mar.','Apr.','May.','Jun.','Jul.','Aug.','Sept.','Oct.','Nov.','Dec.'];
+        	month = now.getMonth();
+        	date = now.getDate();
+        	week = now.getDay();
+        	document.querySelector('#date p').innerHTML = weeks[week] +'  '+ months[month] +' '+date+'th';
+        	//天气
+			var url = "https://free-api.heweather.com/v5/weather?city=haidian&key=93154022920b4c4db83874db33b724d3";
+			infoRequest = new XMLHttpRequest();
+			function handleStateChange()
+			{   
+				var result = infoRequest.responseText;
+				//console.log(result);
+				var result = JSON.parse(result);
+				//var city   = result["HeWeather5"][0].basic.city;
+				var pm25   = result["HeWeather5"][0].aqi.city.pm25;//83
+				var qlty   = result["HeWeather5"][0].aqi.city.qlty;//良
+				var wind_0 = result["HeWeather5"][0].daily_forecast[0].wind.sc;//更新当天
+				var wind_1 = result["HeWeather5"][0].daily_forecast[1].wind.sc;//第二天
+				var wind_2 = result["HeWeather5"][0].daily_forecast[2].wind.sc;//第三天
+				
+				var d1d = result["HeWeather5"][0].daily_forecast[0].cond.txt_d;//更新当天白天
+				var d1n = result["HeWeather5"][0].daily_forecast[0].cond.txt_n;//更新当天夜间
+				var d2d = result["HeWeather5"][0].daily_forecast[1].cond.txt_d;//更新2th白天
+				var d2n = result["HeWeather5"][0].daily_forecast[1].cond.txt_n;//更新2th夜间
+				var d3d = result["HeWeather5"][0].daily_forecast[2].cond.txt_d;//更新3rd白天
+				var d3n = result["HeWeather5"][0].daily_forecast[2].cond.txt_n;//更新3rd夜间
+				
+				var update = result["HeWeather5"][0].basic.update.loc;//更新时间
+				var update_time = update.slice(10);
+				
+				var today_obj = new Date();
+				var today = today_obj.getDate();
+				var update_day = parseInt(update.slice(8,10));
+				if (today == update_day ) {
+					document.getElementById('wind1').innerHTML = "Wind:  "+wind_0+" <i>f</i>";
+					document.getElementById('wea1').innerHTML = "Tody:  "+d1d+" ~ "+d1n;
+					document.getElementById('wind2').innerHTML = "Wind:  "+wind_1;
+					document.getElementById('wea2').innerHTML = "Tomo:  "+d2d+" ~ "+d2n;
+				} else {
+					document.getElementById('wind1').innerHTML = "Wind:  "+wind_1;
+					document.getElementById('wea1').innerHTML = "Tody:  "+d2d+" ~ "+d2n;
+					document.getElementById('wind2').innerHTML = "Wind:  "+wind_2;
+					document.getElementById('wea2').innerHTML = "Tomo:  "+d3d+" ~ "+d3n;
+
+				}
+				//空气质量
+				document.getElementById('qlty').innerHTML = "Air: "+qlty+"  PM2.5:"+ pm25;
+				//更新时间
+				document.getElementById('updt').innerHTML = "Up:"+update;
+			}
+			infoRequest.open('get',url);
+			infoRequest.onreadystatechange = handleStateChange;
+			infoRequest.send(null);	
+        </script>
+    </body>
+<script charset="gbk" src="http://www.baidu.com/js/opensug.js"></script>
+</html>
